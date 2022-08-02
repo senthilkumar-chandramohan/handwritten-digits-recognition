@@ -5,7 +5,7 @@ let model;
 const labels = ['0','1','2','3','4','5','6','7','8','9'];
 
 (async function() {
-    model = await tf.loadLayersModel('/model/model.json');
+    model = await tf.loadLayersModel('model/model.json');
 })();
 
 const predict = (pixelData, imageWidth, imageHeight, imageChannels) => {
