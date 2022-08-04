@@ -171,6 +171,9 @@ const createAndTrainModel = async () => {
     const trainingData = loadData(`file://${path.resolve(path.join(__dirname, "../data/dataset_train.csv"))}`);
     const testingData = loadData(`file://${path.resolve(path.join(__dirname, "../data/dataset_test.csv"))}`);
 
+    const arr = await trainingData.take(1).toArray();
+    arr[0].xs.print();
+
     model = createModel();
     const info = await trainModel(model, trainingData);
     console.log(info);
